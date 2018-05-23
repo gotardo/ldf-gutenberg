@@ -1,0 +1,29 @@
+{
+    "name": "ldf/gutenberg",
+    "description": "PHP based templa",
+    "type": "library",
+    "keywords": ["templating"],
+    "license": "MIT",
+    "readme": "./README.md",
+    "authors": [
+        {
+            "name": "Gotardo González",
+            "email": "contact@gotardo.es"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.1"
+    },
+    "require-dev": {
+      "fzaninotto/faker": "~1.7",
+      "mockery/mockery": "~1.1.",
+      "phpunit/phpunit": "~7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ldf\\": ["src/Ldf"],
+            "Test\\": ["test/Ldf"]
+        }
+    }
+}

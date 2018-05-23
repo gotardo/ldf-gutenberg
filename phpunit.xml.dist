@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<phpunit
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/6.3/phpunit.xsd"
+
+        backupGlobals="false"
+        backupStaticAttributes="false"
+        bootstrap="./vendor/autoload.php"
+        cacheTokens="false"
+        checkForUnintentionallyCoveredCode="true"
+        colors="true"
+        beStrictAboutOutputDuringTests="true"
+        beStrictAboutTestsThatDoNotTestAnything="true"
+        beStrictAboutTodoAnnotatedTests="true"
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="true"
+        forceCoversAnnotation="true"
+        mapTestClassNameToCoveredClassName="false"
+        processIsolation="false"
+        stopOnError="false"
+        stopOnFailure="false"
+        stopOnIncomplete="false"
+        stopOnSkipped="false"
+        stopOnRisky="false"
+        syntaxCheck="true"
+        timeoutForSmallTests="1"
+        timeoutForMediumTests="5"
+        timeoutForLargeTests="10"
+        verbose="true"
+>
+    <testsuites>
+        <testsuite name="test">
+            <directory>./test</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory>./src</directory>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-html" target="./reporting/coverage/" />
+        <log type="coverage-clover" target="./reporting/clover.xml" />
+        <log type="testdox-html" target="./reporting/testdox.html" />
+        <log type="testdox-text" target="./reporting/testdox.txt" />
+    </logging>
+</phpunit>

@@ -1,0 +1,7 @@
+.idea
+phpunit.xml
+reporting
+vendor
+.php_cs.cache
+node_modules
+log/*
