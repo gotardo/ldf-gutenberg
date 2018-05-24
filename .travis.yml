@@ -6,6 +6,10 @@ php:
   - nightly
 
 before_script:
+  ## Notify Codeclimate
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
   ## Composer
   - curl -s http://getcomposer.org/installer | php
   - composer install --prefer-source --no-interaction
@@ -15,7 +19,7 @@ script:
 
 after_script:
   # Send test reporting to Codeclimate
-  - sh ./build/code-climate.sh
+  - ./cc-test-reporter after-build --debug
 
 notifications:
     email:
