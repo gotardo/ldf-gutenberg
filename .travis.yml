@@ -15,7 +15,7 @@ script:
 
 after_script:
   # Send test reporting to Codeclimate
-  - ./build/code-climate.sh
+  - sh ./build/code-climate.sh
 
 notifications:
     email:
