@@ -1,5 +1,9 @@
 # ldf-gutenberg v0.1.0
 
+[![Build Status](https://travis-ci.org/gotardo/ldf-gutenberg.svg?branch=master)](https://travis-ci.org/gotardo/ldf-gutenberg)
+[![Maintainability](https://api.codeclimate.com/v1/badges/118b2d7799e91f3e6ce0/maintainability)](https://codeclimate.com/github/gotardo/ldf-gutenberg/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/118b2d7799e91f3e6ce0/test_coverage)](https://codeclimate.com/github/gotardo/ldf-gutenberg/test_coverage)
+
 Gutenberg is a view renderer written in PHP and based on the fact that view **must** be totally separated from logic.
 
 This system will allow you to easily substitute some variables for values and compose views in an easy way for a CMS, 
