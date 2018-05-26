@@ -23,7 +23,7 @@ class FileTemplateLoader implements ITemplateLoader
      */
     public function __construct(string $tplWorkspace)
     {
-        $this->tplWorkspace = $tplWorkspace;
+        $this->tplWorkspace = realpath($tplWorkspace);
     }
 
     /**
