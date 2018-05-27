@@ -38,21 +38,20 @@ class Wrapper implements ICompiler
 
     private static function cleanseInheritanceTag(string $baseTpl, string $tpl): string
     {
-        return str_replace('{{ wrapped ' . $baseTpl . ' }}', '',  $tpl);
+        return str_replace('{{ wrapper ' . $baseTpl . ' }}', '',  $tpl);
     }
 
     private static function getBaseTemplate(string $tpl) : ?string
     {
-        preg_match('/{{ wrapped (_.*) }}/', $tpl, $matches);
+        preg_match('/{{ wrapper (_.*) }}/', $tpl, $matches);
+
+        if (count($matches) > 2)
+        {throw new Exception('Too many `wrapper` expressions in template');
+        }
 
         if (array_key_exists(1, $matches))
         {
             return $matches[1];
-        }
-
-        if (count($matches) > 2)
-        {
-            throw new Exception('Too many `extends` instructions in template');
         }
 
         return null;
