@@ -50,14 +50,19 @@ The value of variable "myvar" is {{ myvar }}
 
 ### Variables
 
-Variables will be refere
-{{ }}
+Variables will be refered as 
+{{ varname }}
 
 ### import
 
-`{{ import tplname}}`
+`{{ import _partialTemplateId }}`
 
-You are already in a workspace, so you can not import templates from another workspace. This way you are forced to avoid cross dependencies.
+Please, notice that in this case the Id begins with an underscore ```_```. This way Gutenberg knows that this template 
+is a partial template. 
+Partial templates, by convention must begin by underscore. Indeed, if they don't begin by underscore they import
+expression will be ignored.
+
+Also notice that you are already in a workspace, so you can not import templates from another workspace. This way you are forced to avoid cross dependencies.
 
 ### wrapper
 
@@ -84,7 +89,6 @@ The rest of the line is a comment and will be ingored. For multiple-line comment
 <strong>
     This will be rendered
 </strong>
-
 ```
 
 Now, be a good kid and go add some comments to your code.
@@ -93,4 +97,4 @@ Now, be a good kid and go add some comments to your code.
 
 So, how can I add some structures such as `if`/`else` or `foreach`? The answer is easy: __you can't__.
 
-Logic should not be on your templates, so you must take care of passing exactly the substitution values ready to use. 
+Logic should not be on your templates, so you must take care of passing exactly some ready-to-use substitution values. 
