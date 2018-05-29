@@ -41,6 +41,7 @@ class WrapperTest extends TestCase
 
     /**
      * @covers ::compile
+     * @covers ::getBaseTemplate
      */
     public function test_Compile_BypassWrapper_WhenNoWrapperIsDefined()
     {
@@ -77,6 +78,7 @@ class WrapperTest extends TestCase
     /**
      * @covers ::compile
      * @covers ::__construct
+     * @covers ::getBaseTemplate
      */
     public function test_Compile_ReturnsWrappedTemplate_WithValidTagging()
     {

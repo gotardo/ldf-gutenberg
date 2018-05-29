@@ -46,7 +46,8 @@ class Wrapper implements ICompiler
         preg_match('/{{ wrapper (_.*) }}/', $tpl, $matches);
 
         if (count($matches) > 2)
-        {throw new Exception('Too many `wrapper` expressions in template');
+        {
+            throw new Exception('Too many `wrapper` expressions in template');
         }
 
         if (array_key_exists(1, $matches))

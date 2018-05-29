@@ -37,6 +37,7 @@ class ImportTest extends AbstractTest
 
     /**
      * @covers ::compile
+     * @covers ::__construct
      */
     public function test_Compile_ReturnsImportedTemplate_WithValidTemplateId()
     {

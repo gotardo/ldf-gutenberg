@@ -21,6 +21,7 @@ class EngineTest extends AbstractTest
 
     /**
      * @covers ::compile
+     * @covers ::__construct
      */
     public function test_Compile_Calls_EveryInjectedCompilers()
     {
