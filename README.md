@@ -13,7 +13,34 @@ or [Twig](https://twig.symfony.com/).
 
 ## How to install
  
-To-Do :-)
+You can install Gutemberg with [composer](https://getcomposer.org/):
+```bash 
+composer require ldf/gutenberg
+```
+
+## Instantiate Gutember
+
+Gutemberg is instantiated by a builder class callde ```Gutemberg```:
+
+```php
+$gutemberg = Gutemberg::ForWorkspace('./path/to/templates');
+``` 
+
+By using the fluent api, you will be able to set up some extra behaviours. The following lines will build a Gutemberg 
+object with Wipe Out mode enabled: 
+
+```php
+// Get the object
+$gutemberg = Gutemberg::ForWorkspace('./path/to/templates')
+    ->withWipeOut();
+
+// Call the render function to get the rendered page    
+return $gutemberg->render('page', [
+    'var1' => 'value1',
+    'var2' => 'value2',
+]);
+``` 
+
 
 ## Template files
 
@@ -98,3 +125,11 @@ Now, be a good kid and go add some comments to your code.
 So, how can I add some structures such as `if`/`else` or `foreach`? The answer is easy: __you can't__.
 
 Logic should not be on your templates, so you must take care of passing exactly some ready-to-use substitution values. 
+
+## Extra options
+
+By using the 
+
+### WipeOut
+
+Wipe out option is enabled

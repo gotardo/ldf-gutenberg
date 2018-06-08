@@ -38,7 +38,7 @@
     </filter>
     <logging>
         <log type="coverage-html" target="./reporting/coverage/" />
-        <log type="coverage-clover" target="./build/logs/clover.xml" />
+        <log type="coverage-clover" target="./clover.xml" />
         <log type="testdox-html" target="./reporting/testdox.html" />
         <log type="testdox-text" target="./reporting/testdox.txt" />
     </logging>
