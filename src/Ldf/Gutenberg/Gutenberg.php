@@ -34,7 +34,7 @@ class Gutenberg implements IWipeOutConfigurable
     /**
      * @return IRenderer
      */
-    public function WithWipeOut() : IRenderer
+    public function withWipeOut() : IRenderer
     {
         return new TemplateWipeOut($this->renderer);
     }

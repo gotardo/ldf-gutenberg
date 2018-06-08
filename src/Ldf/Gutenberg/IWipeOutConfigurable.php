@@ -14,5 +14,5 @@ interface IWipeOutConfigurable
      * Configure template WipeOut for a Template renderer.
      * @return IRenderer
      */
-    public function WithWipeOut(): IRenderer;
+    public function withWipeOut(): IRenderer;
 }
