@@ -17,9 +17,11 @@ before_script:
 script:
   - phpunit -c phpunit.xml.dist
 
-after_script:
+after_success:
   # Send test reporting to Codeclimate
   - ./cc-test-reporter after-build --debug
+  # Send test reporting to Codecov.io
+  - bash <(curl -s https://codecov.io/bash)
 
 notifications:
     email:
@@ -27,7 +29,7 @@ notifications:
 
 branches:
   only:
-  - master
-  - dev
-  - feature/*
-  - release/*
+    - master
+    - dev
+    - feature/*
+    - release/*
