@@ -128,8 +128,17 @@ Logic should not be on your templates, so you must take care of passing exactly 
 
 ## Extra options
 
-By using the 
+By using the builder, you will be able to configure some extra options
 
 ### WipeOut
 
-Wipe out option is enabled
+You can enable wipe out feature by calling ```withWipeOut```. 
+
+When Wipe out option is enabled any Gutemberg tag which is not recognized, e.g. {{ unknownVariable }}, will be cleaned 
+from the template. An E_USER_WARNING level error will be raised. 
+
+```php
+// Get the object
+$gutemberg = Gutemberg::ForWorkspace('./path/to/templates')
+    ->withWipeOut();
+``` 
