@@ -20,7 +20,7 @@ class TemplateWipeOutTest extends TestCase
      * @covers ::render()
      * @expectedException \PHPUnit\Framework\Error\Warning
      */
-    public function test()
+    public function test_Render_ShouldCleanTags_WhenUnparsedTagsAreFound()
     {
         $template = "This is the template {{ unfound-tag }}";
         $renderer = Mock::renderer();
@@ -39,7 +39,7 @@ class TemplateWipeOutTest extends TestCase
      * @covers ::__construct
      * @covers ::render()
      */
-    public function test2()
+    public function test_Render_ShouldDoNothing_WhenNoUnparsedTagsAreFound()
     {
         $template = "This is the template";
         $renderer = Mock::renderer();
