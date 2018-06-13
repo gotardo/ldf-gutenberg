@@ -15,11 +15,6 @@ use PHPUnit\Framework\TestCase;
 class ThisYearTest extends TestCase
 {
     /**
-     * @var MockInterface for IRenderer
-     */
-    private $renderer;
-
-    /**
      * @var \Ldf\Gutenberg\Compiler\ThisYear
      */
     private $sut;
@@ -30,7 +25,7 @@ class ThisYearTest extends TestCase
     public function setUp()
     {
         $this->renderer = Mock::renderer();
-        $this->sut = new ThisYear($this->renderer);
+        $this->sut = new ThisYear();
     }
 
     /**
