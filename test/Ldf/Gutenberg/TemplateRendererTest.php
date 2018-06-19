@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Test\Gutenberg;
 
+use Ldf\Gutenberg\Compiler\ICompiler;
 use Ldf\Gutenberg\ITemplateLoader;
 use Ldf\Gutenberg\TemplateRenderer;
 use PHPUnit\Framework\TestCase;

@@ -26,7 +26,7 @@ class Gutenberg implements IWipeOutConfigurable
      * @param string $workspacePath The identifier of the workspace.
      * @return IWipeOutConfigurable
      */
-    public static function ForWorkspace(string $workspacePath) : IWipeOutConfigurable
+    public static function ForWorkspace(string $workspacePath) : Gutenberg
     {
         return new self(new TemplateRenderer(new FileTemplateLoader($workspacePath)));
     }
@@ -34,8 +34,14 @@ class Gutenberg implements IWipeOutConfigurable
     /**
      * @return IRenderer
      */
-    public function withWipeOut() : IRenderer
+    public function withWipeOut() : Gutenberg
     {
-        return new TemplateWipeOut($this->renderer);
+        $this->renderer = new TemplateWipeOut($this->renderer);
+        return $this;
+    }
+
+    public function get(): IRenderer
+    {
+        return $this->renderer;
     }
 }

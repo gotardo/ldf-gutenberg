@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Ldf\Gutenberg\Compiler;
 
 use Ldf\Gutenberg\Exception;
+use Ldf\Gutenberg\ICompiler;
 use Ldf\Gutenberg\IRenderer;
 
 /**

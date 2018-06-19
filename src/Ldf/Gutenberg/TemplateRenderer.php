@@ -12,7 +12,7 @@ use Ldf\Gutenberg\Compiler\XWing;
  * Class TemplateRenderer
  * @package Ldf\Gutenberg
  */
-class TemplateRenderer implements IRenderer
+class TemplateRenderer implements IRenderer, ICustomizableCompiler
 {
     /**
      * @var ITemplateLoader
@@ -32,6 +32,15 @@ class TemplateRenderer implements IRenderer
             new Import($this),
             new Wrapper($this)
         );
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function addCustomCompiler(ICompiler $compiler): ICustomizableCompiler
+    {
+        $this->compiler = new Engine($this->compiler, $compiler);
+        return $this;
     }
 
     /**
