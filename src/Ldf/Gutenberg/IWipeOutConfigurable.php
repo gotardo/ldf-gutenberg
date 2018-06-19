@@ -14,5 +14,5 @@ interface IWipeOutConfigurable
      * Configure template WipeOut for a Template renderer.
      * @return IRenderer
      */
-    public function withWipeOut(): IRenderer;
+    public function withWipeOut(): Gutenberg;
 }

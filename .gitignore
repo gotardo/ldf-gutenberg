@@ -5,5 +5,7 @@ vendor
 .php_cs.cache
 node_modules
 log/*
+*.log
 build/logs
 codeclimate.json
+clover.xml
