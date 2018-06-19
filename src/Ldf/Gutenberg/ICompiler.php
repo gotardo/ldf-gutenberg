@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Ldf\Gutenberg\Compiler;
-
-use Ldf\Gutenberg\Exception;
+namespace Ldf\Gutenberg;
 
 /**
  * Interface ICompiler

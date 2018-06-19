@@ -1,4 +1,4 @@
-# ldf-gutenberg v0.1.0
+# ldf-gutenberg v0.2.0-RC
 
 [![Build Status](https://travis-ci.org/gotardo/ldf-gutenberg.svg?branch=master)](https://travis-ci.org/gotardo/ldf-gutenberg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/118b2d7799e91f3e6ce0/maintainability)](https://codeclimate.com/github/gotardo/ldf-gutenberg/maintainability)
@@ -13,29 +13,29 @@ or [Twig](https://twig.symfony.com/).
 
 ## How to install
  
-You can install Gutemberg with [composer](https://getcomposer.org/):
+You can install Gutenberg with [composer](https://getcomposer.org/):
 ```bash 
 composer require ldf/gutenberg
 ```
 
-## Instantiate Gutember
+## Instantiate Gutenberg
 
-Gutemberg is instantiated by a builder class callde ```Gutemberg```:
+Gutenberg is instantiated by a builder class called ```Gutenberg```:
 
 ```php
-$gutemberg = Gutemberg::ForWorkspace('./path/to/templates');
+$Gutenberg = Gutenberg::ForWorkspace('./path/to/templates');
 ``` 
 
-By using the fluent api, you will be able to set up some extra behaviours. The following lines will build a Gutemberg 
+By using the fluent api, you will be able to set up some extra behaviours. The following lines will build a Gutenberg 
 object with Wipe Out mode enabled: 
 
 ```php
 // Get the object
-$gutemberg = Gutemberg::ForWorkspace('./path/to/templates')
+$Gutenberg = Gutenberg::ForWorkspace('./path/to/templates')
     ->withWipeOut();
 
 // Call the render function to get the rendered page    
-return $gutemberg->render('page', [
+return $Gutenberg->render('page', [
     'var1' => 'value1',
     'var2' => 'value2',
 ]);
@@ -62,7 +62,7 @@ identifier with something like ```myTemplate.tpl```.
 
 ## Keywords
 
-Gutemberg provides some expressions to allow you to define some dinamic points in your templates.
+Gutenberg provides some expressions to allow you to define some dinamic points in your templates.
 
 ### Generally speaking
 
@@ -134,11 +134,36 @@ By using the builder, you will be able to configure some extra options
 
 You can enable wipe out feature by calling ```withWipeOut```. 
 
-When Wipe out option is enabled any Gutemberg tag which is not recognized, e.g. {{ unknownVariable }}, will be cleaned 
+When Wipe out option is enabled any Gutenberg tag which is not recognized, e.g. {{ unknownVariable }}, will be cleaned 
 from the template. An E_USER_WARNING level error will be raised. 
 
 ```php
-// Get the object
-$gutemberg = Gutemberg::ForWorkspace('./path/to/templates')
-    ->withWipeOut();
-``` 
+$Gutenberg = Gutenberg::ForWorkspace('./path/to/templates')
+    ->withWipeOut()
+    ->get();
+```
+## Extending Gutenberg's functionality.
+
+Gutenberg provides a feature to add some custom compilers. This will allow you to create your own language expressions.
+You can add your own language expression calls by implementing ICompiler:  
+
+```php
+class MyCustomCompiler implements \Ldf\Gutenberg\ICompiler
+{
+    public function compile(string $tpl) : string
+    {
+        ...
+    }
+}
+```
+
+You can add as many custom compilers as you want.
+
+```php
+Gutenberg::ForWorkspace('./FakeTemplates')
+    ->addCustomCompiler($myCustomCompiler1)
+    ->addCustomCompiler($myCustomCompiler2)
+```
+
+Just take into account that compilers are executed sequentially, begining by the core compilers and the core options. 
+Custom compilers will be executed at the end.

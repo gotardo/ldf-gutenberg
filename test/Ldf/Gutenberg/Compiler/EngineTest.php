@@ -5,10 +5,8 @@ declare(strict_types=1);
 namespace Test\Gutenberg\Compiler;
 
 use Ldf\Gutenberg\Compiler\Engine;
-use Ldf\Gutenberg\Compiler\ICompiler;
 use Ldf\Gutenberg\Exception;
 use Mockery\MockInterface;
-use PHPUnit\Framework\TestCase;
 
 /**
  * Class EngineTest

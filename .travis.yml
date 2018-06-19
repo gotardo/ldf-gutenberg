@@ -22,14 +22,17 @@ after_success:
   - ./cc-test-reporter after-build --debug
   # Send test reporting to Codecov.io
   - bash <(curl -s https://codecov.io/bash)
+  # Send report to sonarcloud
+  - wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.2.0.1227-linux.zip
+  - unzip sonar-scanner-cli-3.2.0.1227-linux.zip
+  - rm sonar-scanner-cli-3.2.0.1227-linux.zip
+  - sonar-scanner -Dsonar.projectKey=ldf-gutenberg -Dsonar.organization=gotardo-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=SONAR_TOKEN
 
 notifications:
     email:
         - ci@gotardo.es
 
 branches:
-  only:
-    - master
-    - dev
-    - feature/*
-    - release/*
+  except:
+    - legacy
+    - experimental
