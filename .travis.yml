@@ -26,7 +26,7 @@ after_success:
   - wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.2.0.1227-linux.zip
   - unzip sonar-scanner-cli-3.2.0.1227-linux.zip
   - rm sonar-scanner-cli-3.2.0.1227-linux.zip
-  - sonar-scanner-cli-3.2.0.1227-linux/sonar-scanner -Dsonar.projectKey=ldf-gutenberg -Dsonar.organization=gotardo-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=SONAR_TOKEN
+  - ./sonar-scanner-cli-3.2.0.1227-linux/sonar-scanner -Dsonar.projectKey=ldf-gutenberg -Dsonar.organization=gotardo-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=SONAR_TOKEN
 
 notifications:
     email:
