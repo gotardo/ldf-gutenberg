@@ -54,6 +54,7 @@ class FileTemplateLoader implements ITemplateLoader
             '%s/_%s',
             '%s/%s.html',
             '%s/_%s.html',
+            '%s/partials/%s.html',
         ];
 
         foreach ($pathTemplates as $pathTemplate)
