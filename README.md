@@ -1,4 +1,4 @@
-# ldf-gutenberg v0.2.0-RC
+# ldf-gutenberg v0.2.2
 
 [![Build Status](https://travis-ci.org/gotardo/ldf-gutenberg.svg?branch=master)](https://travis-ci.org/gotardo/ldf-gutenberg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/118b2d7799e91f3e6ce0/maintainability)](https://codeclimate.com/github/gotardo/ldf-gutenberg/maintainability)
