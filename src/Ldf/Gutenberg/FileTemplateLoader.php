@@ -34,12 +34,12 @@ class FileTemplateLoader implements ITemplateLoader
     public function loadTemplate(string $tplId) : string
     {
         $filename = $this->resolveFileName($tplId);
-        return $this->getFileTag($filename) . file_get_contents($filename);
+        return $this->getFileTag($tplId) . file_get_contents($filename) . $this->getFileTag($tplId, 'END');
     }
 
-    private static function getFileTag($filename): string
+    private static function getFileTag($filename, $placeholder = 'BEGIN'): string
     {
-        return sprintf("<!-- %s -->", $filename);
+        return sprintf("<!-- %s %s -->", $placeholder, $filename);
     }
 
     /**
