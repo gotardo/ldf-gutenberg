@@ -61,7 +61,7 @@ class FileTemplateLoader implements ITemplateLoader
         {
             $path = realpath(sprintf($pathTemplate, $this->tplWorkspace, $tplId));
 
-            if ($path && file_exists($path))
+            if ($path && is_file($path))
             {
                 return realpath($path);
             }
